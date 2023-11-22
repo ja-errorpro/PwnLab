@@ -17,3 +17,5 @@ int main(){
 	vuln();
 	return 0;
 }
+
+// gcc -fno-stack-protector -no-pie ret2text.c -o ret2text
