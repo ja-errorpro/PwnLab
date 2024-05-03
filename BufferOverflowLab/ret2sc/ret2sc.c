@@ -21,6 +21,4 @@ int main(){
 	return 0;
 }
 
-// Use Ubuntu 16.04
-// sudo apt install gcc-multilib
-// gcc -m32 -fno-stack-protector -no-pie -zexecstack ret2sc.c -o ret2sc
+// gcc -fno-stack-protector -no-pie -zexecstack ret2sc.c -o ret2sc
