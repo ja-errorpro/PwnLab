@@ -7,5 +7,3 @@ CTF Practice Lab
 * Python3
 * GDB
 * pwntools
-
-
