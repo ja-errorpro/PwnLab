@@ -1,4 +1,4 @@
-// gcc -fno-stack-protector -no-pie chal.c -o chal
+// gcc -fno-stack-protector -no-pie ret2sc_seccomp.c -o ret2sc_seccomp
 
 #include <stdio.h>
 #include <sys/mman.h>
@@ -50,11 +50,10 @@ int main() {
   unsigned long addr = (unsigned long)&username & ~0xfff;
   mprotect((void *)addr, 0x1000, PROT_EXEC | PROT_READ | PROT_WRITE);
   apply_seccomp();
-  char password[40];
-  printf("Username: ");
+  char password[20];
+  puts("Input your name: ");
   read(0, username, username_len);
-  printf("Password: ");
-  read(0, password, 0x40);
-  puts("Wrong username/password! Please try again.");
+  puts("Try your best: ");
+  gets(password);
   return 0;
 }
